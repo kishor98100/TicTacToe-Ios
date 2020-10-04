@@ -14,6 +14,23 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
+    
+    @IBOutlet weak var buttonFive: UIButton!
+    
+    @IBOutlet weak var buttonSix: UIButton!
+    
+    @IBOutlet weak var buttonSeven: UIButton!
+    @IBOutlet weak var buttonEight: UIButton!
+    
+    @IBOutlet weak var buttonNine: UIButton!
+    
+   
+    
+    
     var activePlayer = 1
     var player1 = [Int]()
     var player2 = [Int]()
@@ -31,6 +48,7 @@ class ViewController: UIViewController {
             buSelect.backgroundColor = UIColor(red: 102/255, green: 250/255, blue:51/255, alpha: 0.5)
             player1.append(buSelect.tag)
             activePlayer = 2
+            autoPlay()
             
         }else{
             buSelect.setTitle("O",for:UIControl.State.normal)
@@ -41,6 +59,48 @@ class ViewController: UIViewController {
         }
         buSelect.isEnabled=false
         findWinner()
+        
+    }
+    
+    
+    func autoPlay(){
+        var emptyCells = [Int]()
+        for index in 1...9 {
+            if !(player1.contains(index) || player2.contains(index)){
+                emptyCells.append(index)
+            }
+        }
+        let randomIndex = arc4random_uniform(UInt32(emptyCells.count))
+        let cellId = emptyCells[Int(randomIndex)]
+        
+        var selectedButton:UIButton?
+        switch cellId {
+        case 1:
+            selectedButton=buttonOne
+        case 2:
+            selectedButton=buttonTwo
+        case 3:
+            selectedButton=buttonThree
+        case 4:
+            selectedButton=buttonFour
+        case 5:
+            selectedButton=buttonFive
+        case 6:
+            selectedButton=buttonSix
+        case 7:
+            selectedButton=buttonSeven
+        case 8:
+            selectedButton=buttonEight
+        case 9:
+            selectedButton=buttonNine
+        default:
+            selectedButton=buttonOne
+        }
+        self.selectedButtons.append(selectedButton!)
+        playGame(selectedButton!)
+
+    
+       
         
     }
     

@@ -193,6 +193,17 @@
                             <constraint firstItem="UMy-rs-GJP" firstAttribute="height" secondItem="w0K-Xc-jht" secondAttribute="height" id="zgu-3P-9Zs"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonEight" destination="hoO-8A-g3Q" id="SNf-qc-Wle"/>
+                        <outlet property="buttonFive" destination="crv-Ab-l94" id="3mL-ES-LBd"/>
+                        <outlet property="buttonFour" destination="3fW-jg-sCv" id="3jC-yY-dQD"/>
+                        <outlet property="buttonNine" destination="Xos-29-0tT" id="Zqe-bS-hwf"/>
+                        <outlet property="buttonOne" destination="w0K-Xc-jht" id="qid-hu-hnq"/>
+                        <outlet property="buttonSeven" destination="aRB-JL-865" id="tUi-0k-70a"/>
+                        <outlet property="buttonSix" destination="DCv-8a-X67" id="FeY-9R-cUa"/>
+                        <outlet property="buttonThree" destination="QXd-vM-4UC" id="aO8-Mj-xxh"/>
+                        <outlet property="buttonTwo" destination="UMy-rs-GJP" id="aVg-AA-KGc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
